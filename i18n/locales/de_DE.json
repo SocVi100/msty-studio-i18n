@@ -445,6 +445,24 @@
       "message": "Bist du sicher, dass du diesen Split löschen möchtest?",
       "rejectLabel": "@:cancel",
       "acceptLabel": "@:delete"
+    },
+    "copySplitToNewConversation": "Split in neue Unterhaltung kopieren",
+    "copySplitToNewConversationSuccess": {
+      "summary": "@:success",
+      "detail": "Split in neue Unterhaltung kopiert"
+    },
+    "copySplitToNewConversationError": {
+      "summary": "@:error",
+      "detail": "Fehler beim Kopieren des Splits in neue Unterhaltung"
+    },
+    "moveSplitToNewConversation": "Split in neue Unterhaltung verschieben",
+    "moveSplitToNewConversationSuccess": {
+      "summary": "@:success",
+      "detail": "Split in neue Unterhaltung verschoben"
+    },
+    "moveSplitToNewConversationError": {
+      "summary": "@:error",
+      "detail": "Fehler beim Verschieben des Splits in neue Unterhaltung"
     }
   },
   "message": {
@@ -479,7 +497,17 @@
     "currentMessageAndDescendantsDeleteConfirmation": {
       "header": "Nachricht und deren Nachfolger löschen",
       "message": "Möchtest du diese Nachricht und alle ihre Nachfolger wirklich löschen?"
-    }
+    },
+    "sendAsAssistantMessageHelp": "Wenn du eine Nachricht als \"Assistent\" sendest, kannst du die Unterhaltung gestalten, indem du selbst KI-Antworten hinzufügst. Die KI wird fortfahren, als hätte sie diese Nachricht geschrieben. Nützlich, um Kontext bereitzustellen oder Antworten zu steuern.",
+    "sendModifier": {
+      "label": "Sende-Modifikator",
+      "none": "Keiner",
+      "shift": "Shift",
+      "ctrl": "Strg",
+      "alt": "Alt",
+      "meta": "Meta"
+    },
+    "sentAsAssistantBadge": "Als Assistenten-Nachricht gesendet"
   },
   "slashCommands": {
     "title": "Schnellbefehle",
@@ -1166,11 +1194,55 @@
     "codeTheme": "Code-Theme",
     "rtlSupport": {
       "title": "RTL-Unterstützung",
-      "description": "Aktiviere die Rechts-nach-Links-Textausrichtung für Sprachen wie Arabisch, Hebräisch und Persisch."
+      "description": "Aktiviere die Rechts-nach-Links-Textausrichtung für Sprachen wie Arabisch, Hebräisch und Persisch.",
+      "sectionDescription": "Aktiviere Rechts-nach-Links-Layouts für Sprachen wie Arabisch, Hebräisch und Persisch. Der gesamte Arbeitsbereich wird sofort aktualisiert, wenn diese Option umgeschaltet wird.",
+      "toggleLabel": "RTL-Layout aktivieren",
+      "enabledHint": "Rechts-nach-Links-Layout ist in der gesamten App aktiv.",
+      "disabledHint": "Die App verwendet derzeit ein Links-nach-Rechts-Layout."
     },
     "miniMap": {
       "title": "Mini Map",
       "description": "Aktiviere den eingebetteten Mini-Map-Navigator mit Branch-Vorschauen. Wenn deaktiviert, wird ein einfacherer Top/Bottom-Navigator verwendet."
+    },
+    "language": {
+      "sectionTitle": "Sprache & Lokalisierung",
+      "sectionDescription": "Wechsle zwischen Oberflächensprachen, zeige den Entwicklermodus in der Vorschau an oder importiere eine temporäre Locale-Datei. Wenn du eine Übersetzung beitragen möchtest, besuche bitte https://github.com/cloudstack-llc/msty-studio-i18n",
+      "localeLabel": "Sprache",
+      "developerMode": {
+        "label": "Entwicklermodus"
+      },
+      "downloadBuiltInLocale": "Lade diese eingebaute Locale-JSON-Datei herunter.",
+      "downloadCustomLocale": "Lade die aktuelle benutzerdefinierte Locale herunter, die du importiert hast.",
+      "downloadDeveloperTemplate": "Lade eine leere Vorlage basierend auf der Basis-Locale herunter.",
+      "downloadTemplate": "Vorlage herunterladen",
+      "importLocale": "Locale importieren",
+      "importLocaleHint": "Importierte Locales bleiben nur bis zum Neustart oder Aktualisieren der App bestehen.",
+      "importSuccessSummary": "Locale importiert",
+      "importSuccessDetail": "Verwende jetzt {code}. Überprüfe die Oberfläche, um die Übersetzungen zu bestätigen.",
+      "importError": "Diese Locale-Datei konnte nicht importiert werden. Stelle sicher, dass es sich um gültiges JSON basierend auf der Vorlage handelt."
+    },
+    "prompts": {
+      "description": "Passe die Prompts für verschiedene KI-Operationen an",
+      "availablePrompts": "Verfügbare Prompts",
+      "selectPrompt": "Wähle einen Prompt zum Anpassen aus",
+      "clickToEdit": "Klicken, um Prompt zu bearbeiten",
+      "variables": "Variablen",
+      "insertFromLibrary": "Aus Bibliothek einfügen",
+      "usingDefault": "Verwende Standard",
+      "usingCustom": "Verwende Benutzerdefiniert",
+      "customized": "Angepasst",
+      "customizedCount": "{count} angepasst",
+      "modified": "Geändert",
+      "lastModified": "Zuletzt geändert",
+      "saveChanges": "Änderungen speichern",
+      "discardChanges": "Änderungen verwerfen",
+      "resetToDefault": "Auf Standard zurücksetzen",
+      "clearContent": "Inhalt leeren",
+      "categories": {
+        "search": "Suche & Synthese",
+        "generation": "Content-Generierung",
+        "analysis": "Analyse & Extraktion"
+      }
     },
     "security": {
       "title": "Sicherheit",
@@ -1344,8 +1416,7 @@
   "workspaces": {
     "createNewWorkspace": "Neuen Arbeitsbereich erstellen",
     "switchWorkspace": "Arbeitsbereich wechseln",
-    "switchToDefaultWorkspace": "Zum Standard-Arbeitsbereich wechseln",
-    "switchToCustomWorkspace": "Zu {workspaceName} Arbeitsbereich wechseln",
+        "switchToCustomWorkspace": "Zu {workspaceName} Arbeitsbereich wechseln",
     "hideWorkspaceTray": "Arbeitsbereichsleiste ausblenden",
     "showWorkspaceTray": "Arbeitsbereichsleiste anzeigen",
     "switchAction": {
@@ -1574,7 +1645,10 @@
     },
     "brave": {
       "useLabel": "Verwende @:rtd.settings.brave",
-      "resultFilter": "Ergebnisse filtern"
+      "resultFilter": "Ergebnisse filtern",
+      "apiKey": {
+        "placeholder": "@:rtd.settings.brave @:apiKey"
+      }
     },
     "searXng": {
       "title": "SearXNG",
@@ -4310,6 +4384,43 @@
         "aborted": "Status: Abgebrochen",
         "unknown": "Status: Unbekannt"
       }
+    },
+    "analytics": {
+      "timings": {
+        "fileReading": "Datei einlesen",
+        "databaseWrite": "Datenbank schreiben",
+        "parallelNote": "Einige Vorgänge laufen möglicherweise parallel, daher addieren sich die einzelnen Zeiten möglicherweise nicht zur Gesamtzeit"
+      }
+    },
+    "buckets": {
+      "files": {
+        "dropHint": "Dateien hier ablegen"
+      }
+    },
+    "cloudShare": {
+      "importingFolder": "Importiere Ordner: {name}",
+      "processingCount": "Verarbeite {count} Knowledge Stack(s)"
+    },
+    "composeProgress": {
+      "composing": "Zusammenstellen",
+      "composingEllipsis": "Zusammenstellen…",
+      "files": "Dateien",
+      "folders": "Ordner",
+      "notes": "Notizen",
+      "youtube": "YouTube",
+      "inFlight": "In Bearbeitung:",
+      "overallProgress": "Gesamtfortschritt",
+      "processing": "Verarbeite: {fileName}"
+    },
+    "itemActions": {
+      "moreActions": "Weitere Aktionen"
+    },
+    "itemStatus": {
+      "ignoredForRetrieval": "Für Abruf ignoriert"
+    },
+    "syncMode": {
+      "hoursAgo": "vor {hours}h",
+      "daysAgo": "vor {days}d"
     }
   },
   "features": {
@@ -4324,5 +4435,40 @@
         "aurum": "Aurum"
       }
     }
-  }
+  },
+  "images": {
+    "upload": "Bild hochladen…",
+    "onlySupported": "Es werden nur Bilddateien unterstützt.",
+    "maxSize": "Bild muss 1MB oder kleiner sein."
+  },
+  "userAvatar": {
+    "updated": "Profilbild aktualisiert.",
+    "updateFailed": "Fehler beim Aktualisieren des Bildes. Bitte versuche es erneut.",
+    "changeHint": "Klicken, um Profilbild zu ändern"
+  },
+  "costCalculator": {
+    "title": "Modellkosten-Rechner",
+    "description": "Berechne und vergleiche Kosten für KI-Modelle von OpenAI, Anthropic, Google und mehr. Schätze deine Ausgaben basierend auf Input-/Output-Token-Nutzung und Modellpreisen. Dies sind nur Schätzungen, und die tatsächlichen Kosten können variieren.",
+    "tokenInputs": "Token-Eingaben",
+    "filters": "Filter",
+    "ctaIntro": "Modell gefunden?",
+    "ctaMessage": "Teste und vergleiche in Msty Studio."
+  },
+  "vramCalculator": {
+    "title": "VRAM-Rechner",
+    "description": "Prüfe, ob ein Modell in den VRAM deines Geräts passt, bevor du es herunterlädst oder ausführst. Dieser Rechner liefert geschätzte VRAM-Anforderungen basierend auf Modellarchitektur und -größe. Wähle eine der untenstehenden Optionen, um zu beginnen.",
+    "ctaIntro": "Modell gefunden?",
+    "ctaMessage": "Teste und vergleiche in Msty Studio."
+  },
+  "modelMatchmaker": {
+    "ctaIntro": "Modell gefunden?",
+    "ctaMessage": "Teste und vergleiche in Msty Studio."
+  },
+  "responseMetrics": {
+    "longPressOrAltClickToCycle": "Langer Druck oder Alt-Klick zum Umschalten der Metriken"
+  },
+  "minimize": "Minimieren",
+  "longPressOrAltClickForMoreOptions": "Langer Druck oder Alt+Klick für weitere Optionen",
+  "toShowMoreOptions": "um weitere Optionen anzuzeigen",
+  "clickToCopyMarkdownDirectly": "Klicken, um Markdown direkt zu kopieren"
 }

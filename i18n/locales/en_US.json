@@ -50,6 +50,9 @@
     "synthesizingQuery": "Synthesizing Query for Better Results :: Optimizing your question :: Enhancing query :: Refining search terms :: Polishing your request :: Fine-tuning the question :: Crafting the perfect query :: Making your words shine",
     "fetchingLiveContexts": "Fetching Live Contexts :: Gathering real-time data :: Pulling fresh insights :: Syncing with live sources :: Tapping into the data stream :: Collecting current intel :: Refreshing context feeds :: Harvesting live updates :: Connecting to the pulse"
   },
+  "progress": {
+    "initializing": "Initializing..."
+  },
   "add": "Add",
   "actionBar": {
     "expandGroup": "Expand {group}",
@@ -134,6 +137,7 @@
   "installed": "Installed",
   "modified": "Modified",
   "created": "Created",
+  "minimize": "Minimize",
   "status": "Status",
   "type": "Type",
   "yes": "Yes",
@@ -472,8 +476,18 @@
     "title": "Message | Messages",
     "currentMessageAndDescendants": "Message and Descendants",
     "sendOnEnter": "Send on Enter",
+    "sendModifier": {
+      "label": "Send Modifier",
+      "none": "None",
+      "shift": "Shift",
+      "alt": "Alt",
+      "ctrl": "Ctrl",
+      "meta": "Meta"
+    },
     "resendUserMessage": "Re-send user message",
     "sendAsAssistantMessage": "Send as @:assistant Message",
+    "sendAsAssistantMessageHelp": "Sending a message as \"Assistant\" lets you shape the conversation by adding AI responses yourself. The AI will continue as if it wrote that message. Useful for providing context or guiding responses.",
+    "sentAsAssistantBadge": "Sent as Assistant Message",
     "stopGeneration": "Stop",
     "renderingActions": {
       "bookmark": "Bookmark Message | Bookmark Messages",
@@ -650,7 +664,7 @@
           "downloadingBinary": "Downloading MLX server...",
           "startingService": "Starting MLX service...",
           "settingUp": "Setting up MLX...",
-          "downloadProgress": "Downloading: {progress}%"
+          "downloadProgress": "Downloading Model: {progress}%"
         }
       },
       "addRemoteModelsProvider": {
@@ -1100,7 +1114,7 @@
     "general": "General",
     "defaultPrompts": "Default Prompts",
     "prompts": {
-      "description": "Customize the prompts used for various AI operations",
+      "description": "These prompts shape how titles are generated, search queries are built, knowledge is retrieved, and context is summarized. Changes are saved to this device’s global settings (master database) and apply across all workspaces (not per workspace).",
       "availablePrompts": "Available Prompts",
       "customized": "Customized",
       "customizedCount": "{count} customized",
@@ -1408,7 +1422,6 @@
   "workspaces": {
     "createNewWorkspace": "Create New Workspace",
     "switchWorkspace": "Switch Workspace",
-    "switchToDefaultWorkspace": "Switch to Default Workspace",
     "switchToCustomWorkspace": "Switch to {workspaceName} Workspace",
     "hideWorkspaceTray": "Hide Workspace Tray",
     "showWorkspaceTray": "Show Workspace Tray",
@@ -3356,7 +3369,8 @@
     }
   },
   "responseMetrics": {
-    "title": "Response Metrics"
+    "title": "Response Metrics",
+    "longPressOrAltClickToCycle": "Long press or Alt click to cycle metrics"
   },
   "quickView": "Quick View",
   "detailsView": "Details View",
@@ -3594,6 +3608,24 @@
   "knowledgeStack": {
     "title": "Knowledge Stack | Knowledge Stacks",
     "contexts": "@:knowledgeStack.title Contexts",
+    "composeProgress": {
+      "processing": "Processing: {fileName}",
+      "composing": "Composing",
+      "composingEllipsis": "Composing…",
+      "files": "Files",
+      "notes": "Notes",
+      "youtube": "YouTube",
+      "folders": "Folders",
+      "overallProgress": "Overall progress",
+      "inFlight": "In-flight:"
+    },
+    "itemStatus": {
+      "ignoredForRetrieval": "Ignored for retrieval"
+    },
+    "cloudShare": {
+      "importingFolder": "Importing folder: {name}",
+      "processingCount": "Processing {count} knowledge stack(s)"
+    },
     "saveEdits": {
       "title": "Save Edits",
       "confirmation": {
@@ -3766,7 +3798,8 @@
         "title": "@:files",
         "description": "Add .pdf, .csv, .md, .json, .jsonl, .xlsx, .docx, .rtf, .txt, .pptx or any other supported file types.",
         "dropZoneText": "Drag and drop files here",
-        "browseFiles": "Browse Files"
+        "browseFiles": "Browse Files",
+        "dropHint": "Drop files here"
       },
       "folders": {
         "title": "@:folders & Obsidian Vaults",
@@ -3841,7 +3874,8 @@
       "lockPermanent": "Lock Permanently",
       "unlock": "Unlock",
       "ignoreRetrieval": "Ignore for Retrieval",
-      "unignoreRetrieval": "Include in Retrieval"
+      "unignoreRetrieval": "Include in Retrieval",
+      "moreActions": "More actions"
     },
     "loadMode": {
       "title": "Load Mode",
@@ -3890,7 +3924,9 @@
       "filesWatching": "{count} file | {count} files",
       "filesCount": "{count} file | {count} files",
       "startedTime": "Started {time}",
-      "totalStats": "{stacks} stack, {files} files | {stacks} stacks, {files} files"
+      "totalStats": "{stacks} stack, {files} files | {stacks} stacks, {files} files",
+      "hoursAgo": "{hours}h ago",
+      "daysAgo": "{days}d ago"
     },
     "analytics": {
       "title": "Analytics and Insights",
@@ -3911,7 +3947,10 @@
         "splittingChunks": "Splitting @:knowledgeStack.chunksConsole.chunks",
         "embeddingChunks": "Embedding @:knowledgeStack.chunksConsole.chunks",
         "composingStack": "Composing Stack",
-        "totalTime": "Total Time"
+        "totalTime": "Total Time",
+        "parallelNote": "Some operations may run in parallel, so individual times may not sum to total time",
+        "fileReading": "File Reading",
+        "databaseWrite": "Database Write"
       },
       "stats": {
         "numberOfItems": "# of Items",
@@ -4407,5 +4446,15 @@
         "aurum": "Aurum"
       }
     }
+  },
+  "images": {
+    "upload": "Upload image…",
+    "onlySupported": "Only image files are supported.",
+    "maxSize": "Image must be 1MB or smaller."
+  },
+  "userAvatar": {
+    "updated": "Profile image updated.",
+    "updateFailed": "Failed to update image. Please try again.",
+    "changeHint": "Click to change profile image"
   }
 }
